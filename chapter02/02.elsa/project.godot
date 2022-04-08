@@ -1,0 +1,105 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "BaseGameObject",
+"class": "Agent",
+"language": "GDScript",
+"path": "res://Agent.gd"
+}, {
+"base": "Reference",
+"class": "BaseGameObject",
+"language": "GDScript",
+"path": "res://BaseGameObject.gd"
+}, {
+"base": "State",
+"class": "DoHousework",
+"language": "GDScript",
+"path": "res://states/elsa/DoHousework.gd"
+}, {
+"base": "State",
+"class": "GoHomeAndSleepTillRested",
+"language": "GDScript",
+"path": "res://states/bob/GoHomeAndSleepTillRested.gd"
+}, {
+"base": "Agent",
+"class": "Miner",
+"language": "GDScript",
+"path": "res://Miner.gd"
+}, {
+"base": "State",
+"class": "QuenchThirst",
+"language": "GDScript",
+"path": "res://states/bob/QuenchThirst.gd"
+}, {
+"base": "Reference",
+"class": "State",
+"language": "GDScript",
+"path": "res://State.gd"
+}, {
+"base": "Reference",
+"class": "StateFactory",
+"language": "GDScript",
+"path": "res://StateFactory.gd"
+}, {
+"base": "Reference",
+"class": "StateMachine",
+"language": "GDScript",
+"path": "res://StateMachine.gd"
+}, {
+"base": "State",
+"class": "VisitBankAndDepositGold",
+"language": "GDScript",
+"path": "res://states/bob/VisitBankAndDepositGold.gd"
+}, {
+"base": "State",
+"class": "VisitBathroom",
+"language": "GDScript",
+"path": "res://states/elsa/VisitBathroom.gd"
+}, {
+"base": "Agent",
+"class": "Wife",
+"language": "GDScript",
+"path": "res://Wife.gd"
+}, {
+"base": "State",
+"class": "WifeGlobalState",
+"language": "GDScript",
+"path": "res://states/elsa/WifeGlobalState.gd"
+} ]
+_global_script_class_icons={
+"Agent": "",
+"BaseGameObject": "",
+"DoHousework": "",
+"GoHomeAndSleepTillRested": "",
+"Miner": "",
+"QuenchThirst": "",
+"State": "",
+"StateFactory": "",
+"StateMachine": "",
+"VisitBankAndDepositGold": "",
+"VisitBathroom": "",
+"Wife": "",
+"WifeGlobalState": ""
+}
+
+[application]
+
+config/name="Game AI - Chapter 2 - Elsa"
+run/main_scene="res://Scene.tscn"
+config/icon="res://icon.png"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
