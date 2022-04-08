@@ -14,5 +14,4 @@ func _process(delta: float) -> void:
     
     if accumulator >= minerUpdateRate:
         accumulator -= minerUpdateRate
-        print("Updating miner")
         miner.update()

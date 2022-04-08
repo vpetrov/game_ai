@@ -13,9 +13,15 @@ func execute(owner:BaseGameObject) -> void:
     miner.say("Pickin' up a nugget")
     
     if miner.hasPocketsFull():
-        miner.changeState("VisitBankAndDepositGold")
+        miner.fsm.changeState("VisitBankAndDepositGold")
+        return
+        
+    if miner.isThirsty():
+        miner.fsm.changeState("QuenchThirst")
+        return
     
 func exit(owner:BaseGameObject) -> void:
     var miner = owner as Miner
     miner.say("Ah'm leavin' the gold mine with mah pockets full o' sweet gold")
     
+func get_class() -> String: return "EnterMineAndDigForNugget"

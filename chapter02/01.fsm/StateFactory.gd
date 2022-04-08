@@ -10,6 +10,7 @@ func get(stateName:String) -> State:
     if !states.has(stateName):
         var stateClass = load(stateScriptDir + stateName + stateScriptExt)
         assert(stateClass != null)
-        states[stateName] = stateClass.new()
+        var instance = stateClass.new()
+        states[stateName] = instance
     
     return states[stateName]

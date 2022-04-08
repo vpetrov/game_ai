@@ -14,10 +14,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://BaseGameObject.gd"
 }, {
+"base": "State",
+"class": "GoHomeAndSleepTillRested",
+"language": "GDScript",
+"path": "res://states/GoHomeAndSleepTillRested.gd"
+}, {
 "base": "BaseGameObject",
 "class": "Miner",
 "language": "GDScript",
 "path": "res://Miner.gd"
+}, {
+"base": "State",
+"class": "QuenchThirst",
+"language": "GDScript",
+"path": "res://states/QuenchThirst.gd"
 }, {
 "base": "Reference",
 "class": "State",
@@ -28,12 +38,26 @@ _global_script_classes=[ {
 "class": "StateFactory",
 "language": "GDScript",
 "path": "res://StateFactory.gd"
+}, {
+"base": "Reference",
+"class": "StateMachine",
+"language": "GDScript",
+"path": "res://StateMachine.gd"
+}, {
+"base": "State",
+"class": "VisitBankAndDepositGold",
+"language": "GDScript",
+"path": "res://states/VisitBankAndDepositGold.gd"
 } ]
 _global_script_class_icons={
 "BaseGameObject": "",
+"GoHomeAndSleepTillRested": "",
 "Miner": "",
+"QuenchThirst": "",
 "State": "",
-"StateFactory": ""
+"StateFactory": "",
+"StateMachine": "",
+"VisitBankAndDepositGold": ""
 }
 
 [application]
