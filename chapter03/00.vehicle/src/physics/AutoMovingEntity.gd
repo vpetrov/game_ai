@@ -10,6 +10,9 @@ func _init() -> void:
     
 func setTargetMeters(targetMeters:Vector2) -> void:
     steeringBehavior.targetMeters = targetMeters
+    
+func setActivationRadiusMeters(radiusMeters:float) -> void:
+    steeringBehavior.activationRadiusMeters = radiusMeters
 
 func update(delta:float) -> void:
     var desiredVelocityMetersPerSec := steeringBehavior.calculateDesiredVelocityMetersPerSec()

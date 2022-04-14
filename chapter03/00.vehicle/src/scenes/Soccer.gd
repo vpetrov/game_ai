@@ -11,6 +11,7 @@ var start_time
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
     $PlayerRed.setTargetPx(Vector2(1300, 0))
+    $PlayerRed.setActivationRadiusPx(100)
     start_time = OS.get_ticks_msec()
     pass # Replace with function body.
     

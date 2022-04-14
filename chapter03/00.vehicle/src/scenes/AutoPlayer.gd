@@ -11,10 +11,12 @@ var oneMeterInPixels:float = 11.11
 func _ready() -> void:
     movingEntity = AutoMovingEntity.new()
     movingEntity.maxSpeedMetersPerSec = 6.0
+    setPositionPx(position)
     
 func _physics_process(delta: float) -> void: 
     movingEntity.update(delta)
-
+    pass
+    
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
     self.position = physicsToPixelVector(movingEntity.positionMeters)
@@ -24,9 +26,22 @@ func _process(delta: float) -> void:
 func setTargetPx(targetPx:Vector2) -> void:
     var targetMeters = pixelToPhysicsVector(targetPx)
     movingEntity.setTargetMeters(targetMeters)
+    
+func setPositionPx(positionPx:Vector2) -> void:
+    movingEntity.positionMeters = pixelToPhysicsVector(positionPx)
+    
+func setActivationRadiusPx(radiusPx:float) -> void:
+    movingEntity.setActivationRadiusMeters(pixelsToMeters(radiusPx))
 
 func physicsToPixelVector(physicsVector:Vector2) -> Vector2:
     return physicsVector * oneMeterInPixels
     
 func pixelToPhysicsVector(pixelVector:Vector2) -> Vector2:
     return pixelVector / oneMeterInPixels
+
+func metersToPixels(meters:float) -> float:
+    return meters * oneMeterInPixels
+    
+func pixelsToMeters(pixels:float) -> float:
+    return pixels / oneMeterInPixels
+
