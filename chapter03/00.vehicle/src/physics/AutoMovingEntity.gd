@@ -16,7 +16,9 @@ func setActivationRadiusMeters(radiusMeters:float) -> void:
 
 func update(delta:float) -> void:
     var desiredVelocityMetersPerSec := steeringBehavior.calculateDesiredVelocityMetersPerSec()
-    assert ( mass >= epsilon || mass <= epsilon)
+    if desiredVelocityMetersPerSec.length_squared() < 0.01:
+        desiredVelocityMetersPerSec = Vector2(0,0)
+
     var forceN = desiredVelocityMetersPerSec * mass
     #var accelerationMeters = steeringForceMetersPerSec / mass
     velocityMetersPerSec = forceN * delta
