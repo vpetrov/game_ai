@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://images/player_blue.png" type="Texture" id=1]
 [ext_resource path="res://src/scenes/Soccer.gd" type="Script" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://images/element (41).png" type="Texture" id=10]
 [ext_resource path="res://src/scenes/AutoPlayer.gd" type="Script" id=11]
 [ext_resource path="res://images/player_red.png" type="Texture" id=12]
+[ext_resource path="res://src/scenes/PlayerYellow.gd" type="Script" id=13]
+[ext_resource path="res://images/characterWhite (1).png" type="Texture" id=14]
 
 [sub_resource type="TileSet" id=1]
 0/name = "plain"
@@ -757,3 +759,10 @@ script = ExtResource( 11 )
 
 [node name="Sprite" type="Sprite" parent="PlayerRed"]
 texture = ExtResource( 12 )
+
+[node name="PlayerYellow" type="Node2D" parent="."]
+position = Vector2( 300, 20 )
+script = ExtResource( 13 )
+
+[node name="Sprite" type="Sprite" parent="PlayerYellow"]
+texture = ExtResource( 14 )

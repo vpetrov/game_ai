@@ -11,4 +11,3 @@ var maxSpeedMetersPerSec:float = 0.0
 var maxForce:float = 0.0
 var maxTurnRate:float = 0.0
 
-var positionMeters := Vector2(0,0)

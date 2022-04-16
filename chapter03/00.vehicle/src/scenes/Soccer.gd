@@ -10,18 +10,22 @@ var start_time
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-    $PlayerRed.setTargetPx(Vector2(672, 416))
+    $PlayerYellow.setTargetPx(Vector2(1250, 450))
+    $PlayerRed.setTargetPx($PlayerBlue.position)
+    $PlayerRed.setSteeringBehavior(SteeringBehavior.FLEE)
+    $PlayerRed.setActivationRadiusPx(130)
+    #$PlayerRed.setTargetPx(Vector2(672, 416))
     #$PlayerRed.setActivationRadiusPx(100)
     start_time = OS.get_ticks_msec()
-    pass # Replace with function body.
     
 func _process(delta: float) -> void:
     var speed = float($PlayerRed.position.x) / ((OS.get_ticks_msec() - start_time)/ 1000.0)
     $PlayerSpeed.text = "%fpx/s" % speed
+    $PlayerRed.setTargetPx($PlayerBlue.position)
 
 func _physics_process(delta:float) -> void:
     handleInput(delta)
-    $PlayerRed.setTargetPx($PlayerBlue.position)
+    #$PlayerRed.setTargetPx($PlayerBlue.position)
         
 func handleInput(delta:float) -> void:
     if Input.is_action_pressed("move_right"):

@@ -9,7 +9,7 @@ var imageHeading := Vector2(1,0)
 var heading := imageHeading;
 
 func _ready() -> void:
-    pass 
+    pass
 
 func _process(delta: float) -> void:
     #var angleRad := acos(heading.dot(imageHeading))

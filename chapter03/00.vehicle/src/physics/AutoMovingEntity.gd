@@ -8,6 +8,9 @@ var steeringBehavior:SteeringBehavior = null
 func _init() -> void:
     steeringBehavior = SteeringBehavior.new(self)
     
+func setTargetEntity(targetEntity:MovingEntity) -> void:
+    steeringBehavior.setTargetEntity(targetEntity)
+    
 func setTargetMeters(targetMeters:Vector2) -> void:
     steeringBehavior.targetMeters = targetMeters
     

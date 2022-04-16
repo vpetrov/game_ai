@@ -15,13 +15,15 @@ func _ready() -> void:
     
 func _physics_process(delta: float) -> void: 
     movingEntity.update(delta)
-    pass
     
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
     self.position = physicsToPixelVector(movingEntity.positionMeters)
     var angleRad := atan2(movingEntity.heading.y, movingEntity.heading.x)
     $Sprite.rotation = angleRad
+
+func setTargetEntity(targetEntity:MovingEntity) -> void:
+    movingEntity.setTargetEntity(targetEntity)
 
 func setTargetPx(targetPx:Vector2) -> void:
     var targetMeters = pixelToPhysicsVector(targetPx)
@@ -32,6 +34,9 @@ func setPositionPx(positionPx:Vector2) -> void:
     
 func setActivationRadiusPx(radiusPx:float) -> void:
     movingEntity.setActivationRadiusMeters(pixelsToMeters(radiusPx))
+    
+func setSteeringBehavior(behavior:int) -> void:
+    movingEntity.steeringBehavior.behavior = behavior
 
 func physicsToPixelVector(physicsVector:Vector2) -> Vector2:
     return physicsVector * oneMeterInPixels
